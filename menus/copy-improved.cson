@@ -1,0 +1,18 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Copy': 'copy-improved:copy-improved'
+      'Cut': 'copy-improved:cut-improved'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Copy Improved'
+      'submenu': [
+        { 'label': 'Copy', 'command': 'copy-improved:copy-improved' }
+        { 'label': 'Cut', 'command': 'copy-improved:cut-improved' }
+      ]
+    ]
+  }
+]

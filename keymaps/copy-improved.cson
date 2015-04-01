@@ -1,0 +1,11 @@
+'.platform-darwin atom-pane.active > .item-views > atom-text-editor':
+  'cmd-c': 'copy-improved:copy-improved'
+  'cmd-x': 'copy-improved:cut-improved'
+
+'.platform-linux atom-pane.active > .item-views > atom-text-editor':
+  'ctrl-c': 'copy-improved:copy-improved'
+  'ctrl-x': 'copy-improved:cut-improved'
+
+'.platform-win32 atom-pane.active > .item-views > atom-text-editor':
+  'ctrl-c': 'copy-improved:copy-improved'
+  'ctrl-x': 'copy-improved:cut-improved'
