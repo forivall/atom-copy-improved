@@ -6,7 +6,7 @@
   "activationEvents": [
     "copy-improved:copy-improved"
   ],
-  "repository": "https://github.com/forivall/copy-improved",
+  "repository": "https://github.com/forivall/atom-copy-improved",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
