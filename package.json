@@ -1,7 +1,7 @@
 {
   "name": "copy-improved",
   "main": "./lib/copy-improved",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Copy/Cut the current improved when no text is selected",
   "activationEvents": [
     "copy-improved:copy-improved"
