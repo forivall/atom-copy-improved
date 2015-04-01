@@ -7,7 +7,6 @@ module.exports =
   # from copy-word atom package
   # selectWord: ->
   #   @prevPos = null
-  #   @editor = atom.workspace.getActiveEditor()
   #   cursors = @editor.getCursors()
   #   if @hasNoSelection()
   #     @prevPos = ([cursor, cursor.getBufferPosition()] for cursor in cursors)
@@ -15,15 +14,20 @@ module.exports =
   #     @editor.selections = @editor.getSelectionsOrderedByBufferPosition()
   #     return true;
 
+  prepare: ->
+    @editor = atom.workspace.getActiveTextEditor()
+
   hasNoSelection: ->
     for selection in @editor.getSelections()
       return false unless selection.isEmpty()
     true
 
   doCopy: ->
+    @prepare()
     return if @hasNoSelection()
     @editor.copySelectedText()
 
   doCut: ->
+    @prepare()
     return if @hasNoSelection()
     @editor.cutSelectedText()
