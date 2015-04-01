@@ -1,0 +1,15 @@
+{
+  "name": "copy-improved",
+  "main": "./lib/copy-improved",
+  "version": "0.0.0",
+  "description": "Copy/Cut the current improved when no text is selected",
+  "activationEvents": [
+    "copy-improved:copy-improved"
+  ],
+  "repository": "https://github.com/forivall/copy-improved",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}
