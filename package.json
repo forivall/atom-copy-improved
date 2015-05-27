@@ -1,7 +1,7 @@
 {
   "name": "copy-improved",
   "main": "./lib/copy-improved",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Copy/Cut, with some minor tweaks/improvements",
   "activationCommands": {
     "atom-text-editor": [
