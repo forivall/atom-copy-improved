@@ -1,8 +1,27 @@
-module.exports =
 
-  activate: (state) ->
-    atom.workspaceView.command "copy-improved:copy-improved", => @doCopy()
-    atom.workspaceView.command "copy-improved:cut-improved", => @doCut()
+class CopyImproved
+  prepare: ->
+    @editor = atom.workspace.getActiveTextEditor()
+
+  hasNoSelection: ->
+    for selection in @editor.getSelections()
+      return false unless selection.isEmpty()
+    true
+
+  doCopy: =>
+    @prepare()
+    return if @hasNoSelection()
+    @editor.copySelectedText()
+
+  doCut: =>
+    @prepare()
+    return if @hasNoSelection()
+    @editor.cutSelectedText()
+
+module.exports.activate = (state) ->
+  instance = new CopyImproved()
+  atom.commands.add('atom-text-editor', 'copy-improved:copy-improved', instance.doCopy)
+  atom.commands.add('atom-text-editor', 'copy-improved:cut-improved', instance.doCut)
 
   # from copy-word atom package
   # selectWord: ->
@@ -13,21 +32,3 @@ module.exports =
   #     @editor.selectWord()
   #     @editor.selections = @editor.getSelectionsOrderedByBufferPosition()
   #     return true;
-
-  prepare: ->
-    @editor = atom.workspace.getActiveTextEditor()
-
-  hasNoSelection: ->
-    for selection in @editor.getSelections()
-      return false unless selection.isEmpty()
-    true
-
-  doCopy: ->
-    @prepare()
-    return if @hasNoSelection()
-    @editor.copySelectedText()
-
-  doCut: ->
-    @prepare()
-    return if @hasNoSelection()
-    @editor.cutSelectedText()
