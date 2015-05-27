@@ -3,9 +3,12 @@
   "main": "./lib/copy-improved",
   "version": "0.0.2",
   "description": "Copy/Cut, with some minor tweaks/improvements",
-  "activationEvents": [
-    "copy-improved:copy-improved"
-  ],
+  "activationCommands": {
+    "atom-text-editor": [
+      "copy-improved:copy-improved",
+      "copy-improved:cut-improved"
+    ]
+  },
   "repository": "https://github.com/forivall/atom-copy-improved",
   "license": "MIT",
   "engines": {
